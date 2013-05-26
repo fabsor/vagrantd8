@@ -1,0 +1,10 @@
+NameVirtualHost *:<%= @port %>
+Listen <%= @port %>
+
+<IfModule mod_ssl.c>
+  Listen <%= @port_ssl %>
+</IfModule>
+
+# For monit
+NameVirtualHost *:50080
+Listen 50080

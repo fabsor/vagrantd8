@@ -1,0 +1,7 @@
+# Apache will form self-referential URLs using the hostname and port supplied
+# by the client if any are supplied (otherwise it will use the canonical name).
+UseCanonicalName off
+
+# Main server name.
+ServerName virtual0
+

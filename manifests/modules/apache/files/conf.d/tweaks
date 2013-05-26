@@ -1,0 +1,30 @@
+# Amount of time the server will wait for certain events before failing.
+Timeout 5
+
+# Enables HTTP persistent connections.
+KeepAlive on
+
+# Amount of time the server will wait for subsequent requests on
+# a persistent connection.
+KeepAliveTimeout 2
+
+# Number of requests allowed on a persistent connection.
+MaxKeepAliveRequests 100
+
+# Maximum value of MaxClients. If changed, Apache need to be restarted.
+ServerLimit 48
+
+# Maximum number of child processes that will be launched to serve requests.
+MaxClients 48
+
+# Number of child server processes created on startup.
+StartServers 20
+
+# Desired minimum number of idle child server processes.
+MinSpareServers 5
+
+# Desired maximum number of idle child server processes.
+MaxSpareServers 25
+
+# Number of requests that an individual child server process will handle.
+MaxRequestsPerChild 50

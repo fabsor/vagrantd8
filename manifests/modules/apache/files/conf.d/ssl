@@ -1,0 +1,20 @@
+<IfModule mod_ssl.c>
+
+  # Where to find the certificates.
+  SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+  SSLCertificateFile /etc/ssl/certs/ssl-cert-snakeoil.pem
+
+  # Force forbidden access when SSLRequireSSL or SSLRequire successfully
+  # decided that access should be forbidden.
+  SSLOptions +StrictRequire
+
+  # This exports the standard SSL/TLS related `SSL_*' environment variables.
+  <FilesMatch "\.(cgi|shtml|phtml|php)$">
+    SSLOptions +StdEnvVars
+  </FilesMatch>
+
+  # See http://www.modssl.org/docs/2.8/ssl_faq.html#ToC49
+  BrowserMatch ".*MSIE.*" nokeepalive ssl-unclean-shutdown downgrade-1.0 force-response-1.0
+ 
+</IfModule>
+

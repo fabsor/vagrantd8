@@ -1,0 +1,25 @@
+<VirtualHost *>
+  <% if @hostname %>
+    ServerName <%= @hostname %>
+  <% end %>
+
+  <% if @aliases %>
+    ServerAlias <% @aliases.each do |server_alias| -%><%= server_alias %><% end %>
+  <% end %>
+
+  DocumentRoot <%= @document_root %>
+  <Directory <%= @document_root %>>
+    # Allow from all as default.
+    <% if @allow_override %>
+      AllowOverride All
+    <% end %>
+    Allow from all
+    # Allow symlinks.
+    Options FollowSymLinks
+    # Set the default handler.
+    DirectoryIndex index.php
+
+    # Make Drupal handle any 404 errors.
+    ErrorDocument 404 /index.php
+  </Directory>
+</VirtualHost>

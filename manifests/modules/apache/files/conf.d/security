@@ -1,0 +1,17 @@
+# Disable access to the entire file system except for the directories that
+# are explicitly allowed later.
+<Directory />
+  AllowOverride None
+  Order allow,deny
+</Directory>
+
+# Return as little information as possible the Server HTTP response Header.
+ServerTokens Prod
+
+# Don't add a line containing the server version and virtual host name to
+# server-generated pages.
+ServerSignature Off
+
+# Return 405 (Method not allowed) on TRACE requests.
+TraceEnable off
+

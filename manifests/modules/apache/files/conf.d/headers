@@ -1,0 +1,5 @@
+# Mod_headers
+# 1 WEEK for images
+<filesMatch "\.(jpg|jpeg|png|gif)$">
+Header set Cache-Control "max-age=604800, public"
+</filesMatch>
