@@ -7,7 +7,7 @@ run "make core", this will set you up with the lasted version D8 core and put it
 the "web" directory.
 
 # Setting up vagrant
-Run "vagrant up"
+Run 'vagrant up'. Vagrant will need sudo permissions for your local user in order to set up NFS shares properly.
 
 # Getting it up and running.
 Go to 192.168.50.2, you should have a working D8 code base.
